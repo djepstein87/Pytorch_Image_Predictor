@@ -1,0 +1,15 @@
+click==7.1.2
+flake8==3.8.4
+Flask==1.1.2
+future==0.18.2
+itsdangerous==1.1.0
+Jinja2==2.11.3
+MarkupSafe==1.1.1
+mccabe==0.6.1
+numpy==1.19.5
+Pillow==8.1.2
+pycodestyle==2.6.0
+pyflakes==2.2.0
+torch==1.6.0
+torchvision==0.7.0
+Werkzeug==1.0.1
