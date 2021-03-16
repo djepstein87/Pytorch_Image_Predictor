@@ -8,9 +8,10 @@ def train():
 def predict(image_bytes):
     tensor = parse.transform_image(image_bytes=image_bytes)
 
+    # uses pre-loaded model (loaded at init) to make prediction
     predicted_idx = get_predicted_index(my_model, tensor)
 
-    # get label from imagenet file
+    # get label from pre-loaded imagenet file
     image_class = imagenet_class_index[predicted_idx]
 
     return image_class

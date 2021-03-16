@@ -16,26 +16,32 @@ class ImageFlow(FlowSpec):
         all_paths = []
 
         print('starting image prediction pipline')
+
+        # wait 5 seconds for flask server to start up
         time.sleep(5)
 
+        # get file paths for all valid images in data folder
         for file_path in os.listdir("./data"):
+
+            # only predict jpg files
             if file_path.endswith(".jpg"):
                 full_path = os.path.join("./data", file_path)
                 all_paths.append(full_path)
 
         self.images_to_predict = all_paths
-
         self.next(self.get_predictions)
 
     @step
     def get_predictions(self):
         """
-        Makes request for predictions and saves results
+        Makes requests for predictions and saves results
         """
 
         results = {}
 
         for idx, image_path in enumerate(self.images_to_predict):
+
+            # make request to flask server in other docker image
             resp = requests.post("http://web:5000/predict",
                                  files={"file": open(image_path, 'rb')})
 
