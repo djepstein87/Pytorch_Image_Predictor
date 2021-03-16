@@ -1,4 +1,4 @@
-# Prototype pytorch image predictor using docker-compose
+# Prototype for pre-trained pytorch image predictor using docker-compose
 
 ### Step 1: Clone repository into local directory
 ### Step 2: (Optional but recommended) Create and enter virtual enviornment, I like pyenv-virtualenv
